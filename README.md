@@ -5,6 +5,8 @@ Comandos:
 
 pip install pillow
 
+pip install speedtest
+
 Imagens:
 
 https://icons8.com/icons

@@ -4,6 +4,9 @@ from tkinter import *
 # Importando o Pillow
 from PIL import Image, ImageTk
 
+# Importando o Speedtest
+import speedtest
+
 # Cores
 co0 = "#f0f3f5"  # Branca 1
 co1 = "#feffff"  # Branca 2
@@ -39,11 +42,20 @@ l_logo_nome.place(x=75, y=10)
 l_logo_linha = Label(frame_logo, width=350, anchor=NW, font=('Ivy 1'), bg=co2)
 l_logo_linha.place(x=0, y=57)
 
+# Função
+def main():
+    speed = speedtest.Speedtest()
+    download = f"{'{:.2f}'.format(speed.download()/1024/1024)}"
+    upload = f"{'{:.2f}'.format(speed.upload()/1024/1024)}"
+
+    l_download['text'] = download
+    l_upload['text'] = upload
+
 # Configurando o frame_corpo
-l_download = Label(frame_corpo, text='65.7', anchor=NW, font=('Arial 28'), bg=co1, fg=co4)
+l_download = Label(frame_corpo, text='', anchor=NW, font=('Arial 28'), bg=co1, fg=co4)
 l_download.place(x=44, y=25)
-l_download = Label(frame_corpo, text='Mbps download', anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
-l_download.place(x=30, y=70)
+l_download_mb = Label(frame_corpo, text='Mbps download', anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
+l_download_mb.place(x=30, y=70)
 
 imagem_down = Image.open('download.png')
 imagem_down = imagem_down.resize((40,50))
@@ -51,11 +63,10 @@ imagem_down = ImageTk.PhotoImage(imagem_down)
 l_logo_imagem = Label(frame_corpo, height=60, image=imagem_down, compound=LEFT, padx=10, anchor='nw', font=('Ivy 16 bold'), bg=co1, fg=co3)
 l_logo_imagem.place(x=130, y=35)
 
-
-l_upload = Label(frame_corpo, text='65.7', anchor=NW, font=('Arial 28'), bg=co1, fg=co4)
+l_upload = Label(frame_corpo, text='', anchor=NW, font=('Arial 28'), bg=co1, fg=co4)
 l_upload.place(x=235, y=25)
-l_upload = Label(frame_corpo, text='Mbps upload', anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
-l_upload.place(x=230, y=70)
+l_upload_mb = Label(frame_corpo, text='Mbps upload', anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
+l_upload_mb.place(x=230, y=70)
 
 imagem_up = Image.open('upload.png')
 imagem_up = imagem_up.resize((40,50))
@@ -63,7 +74,7 @@ imagem_up = ImageTk.PhotoImage(imagem_up)
 l_logo_imagem = Label(frame_corpo, height=60, image=imagem_up, compound=LEFT, padx=10, anchor='nw', font=('Ivy 16 bold'), bg=co1, fg=co3)
 l_logo_imagem.place(x=170, y=35)
 
-botao_testar = Button(frame_corpo, text='Iniciar teste', font=('Ivy 10 bold'), relief=RAISED, overrelief=RIDGE, bg=co5, fg=co1)
+botao_testar = Button(frame_corpo, command=main, text='Iniciar teste', font=('Ivy 10 bold'), relief=RAISED, overrelief=RIDGE, bg=co5, fg=co1)
 botao_testar.place(x=135, y=100)
 
 janela.mainloop()
