@@ -5,7 +5,7 @@ from tkinter import *
 from PIL import Image, ImageTk
 
 # Importando o Speedtest
-import speedtest
+import speedtest as st
 
 # Cores
 co0 = "#f0f3f5"  # Branca 1
@@ -44,16 +44,19 @@ l_logo_linha.place(x=0, y=57)
 
 # Função
 def main():
-    speed = speedtest.Speedtest()
+    speed = st.Speedtest()
     download = f"{'{:.2f}'.format(speed.download()/1024/1024)}"
     upload = f"{'{:.2f}'.format(speed.upload()/1024/1024)}"
 
     l_download['text'] = download
     l_upload['text'] = upload
 
+    botao_testar['text'] = 'Teste novamente'
+    botao_testar.place(x=115, y=100)
+
 # Configurando o frame_corpo
 l_download = Label(frame_corpo, text='', anchor=NW, font=('Arial 28'), bg=co1, fg=co4)
-l_download.place(x=44, y=25)
+l_download.place(x=24, y=25)
 l_download_mb = Label(frame_corpo, text='Mbps download', anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_download_mb.place(x=30, y=70)
 
@@ -64,7 +67,7 @@ l_logo_imagem = Label(frame_corpo, height=60, image=imagem_down, compound=LEFT, 
 l_logo_imagem.place(x=130, y=35)
 
 l_upload = Label(frame_corpo, text='', anchor=NW, font=('Arial 28'), bg=co1, fg=co4)
-l_upload.place(x=235, y=25)
+l_upload.place(x=215, y=25)
 l_upload_mb = Label(frame_corpo, text='Mbps upload', anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_upload_mb.place(x=230, y=70)
 
