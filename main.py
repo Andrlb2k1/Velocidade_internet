@@ -40,4 +40,18 @@ l_logo_nome.place(x=75, y=10)
 l_logo_linha = Label(frame_logo, width=350, anchor=NW, font=('Ivy 1'), bg=co2)
 l_logo_linha.place(x=0, y=57)
 
+# Configurando o frame_corpo
+l_download = Label(frame_corpo, text='65.7', anchor=NW, font=('Arial 28'), bg=co1, fg=co4)
+l_download.place(x=44, y=25)
+
+l_download = Label(frame_corpo, text='Mbps download', anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
+l_download.place(x=30, y=70)
+
+imagem_down = Image.open('download.png')
+imagem_down = imagem_down.resize((50,50))
+imagem_down = ImageTk.PhotoImage(imagem_down)
+
+l_logo_imagem = Label(frame_corpo, height=60, image=imagem_down, compound=LEFT, padx=10, anchor='nw', font=('Ivy 16 bold'), bg=co1, fg=co3)
+l_logo_imagem.place(x=130, y=35)
+
 janela.mainloop()
