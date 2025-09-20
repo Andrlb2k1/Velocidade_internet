@@ -5,8 +5,6 @@ Comandos:
 
 pip install pillow
 
-pip install tkcalendar   
-
 Imagens:
 
 https://icons8.com/icons
