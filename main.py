@@ -30,7 +30,6 @@ frame_corpo.grid(row=1, column=0, pady=1, padx=0, sticky=NSEW)
 imagem = Image.open('speed.png')
 imagem = imagem.resize((55,55))
 imagem = ImageTk.PhotoImage(imagem)
-
 l_logo_imagem = Label(frame_logo, height=60, image=imagem, compound=LEFT, padx=10, anchor='nw', font=('Ivy 16 bold'), bg=co1, fg=co3)
 l_logo_imagem.place(x=20, y=0)
 
@@ -43,15 +42,25 @@ l_logo_linha.place(x=0, y=57)
 # Configurando o frame_corpo
 l_download = Label(frame_corpo, text='65.7', anchor=NW, font=('Arial 28'), bg=co1, fg=co4)
 l_download.place(x=44, y=25)
-
 l_download = Label(frame_corpo, text='Mbps download', anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_download.place(x=30, y=70)
 
 imagem_down = Image.open('download.png')
-imagem_down = imagem_down.resize((50,50))
+imagem_down = imagem_down.resize((40,50))
 imagem_down = ImageTk.PhotoImage(imagem_down)
-
 l_logo_imagem = Label(frame_corpo, height=60, image=imagem_down, compound=LEFT, padx=10, anchor='nw', font=('Ivy 16 bold'), bg=co1, fg=co3)
 l_logo_imagem.place(x=130, y=35)
+
+
+l_upload = Label(frame_corpo, text='65.7', anchor=NW, font=('Arial 28'), bg=co1, fg=co4)
+l_upload.place(x=235, y=25)
+l_upload = Label(frame_corpo, text='Mbps upload', anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
+l_upload.place(x=230, y=70)
+
+imagem_up = Image.open('upload.png')
+imagem_up = imagem_up.resize((40,50))
+imagem_up = ImageTk.PhotoImage(imagem_up)
+l_logo_imagem = Label(frame_corpo, height=60, image=imagem_up, compound=LEFT, padx=10, anchor='nw', font=('Ivy 16 bold'), bg=co1, fg=co3)
+l_logo_imagem.place(x=170, y=35)
 
 janela.mainloop()
