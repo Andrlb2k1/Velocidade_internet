@@ -67,7 +67,7 @@ l_logo_imagem = Label(frame_corpo, height=60, image=imagem_down, compound=LEFT, 
 l_logo_imagem.place(x=130, y=35)
 
 l_upload = Label(frame_corpo, text='', anchor=NW, font=('Arial 28'), bg=co1, fg=co4)
-l_upload.place(x=215, y=25)
+l_upload.place(x=220, y=25)
 l_upload_mb = Label(frame_corpo, text='Mbps upload', anchor=NW, font=('Ivy 10'), bg=co1, fg=co4)
 l_upload_mb.place(x=230, y=70)
 
