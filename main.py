@@ -75,7 +75,7 @@ imagem_up = Image.open('upload.png')
 imagem_up = imagem_up.resize((40,50))
 imagem_up = ImageTk.PhotoImage(imagem_up)
 l_logo_imagem = Label(frame_corpo, height=60, image=imagem_up, compound=LEFT, padx=10, anchor='nw', font=('Ivy 16 bold'), bg=co1, fg=co3)
-l_logo_imagem.place(x=170, y=35)
+l_logo_imagem.place(x=180, y=35)
 
 botao_testar = Button(frame_corpo, command=main, text='Iniciar teste', font=('Ivy 10 bold'), relief=RAISED, overrelief=RIDGE, bg=co5, fg=co1)
 botao_testar.place(x=135, y=100)
